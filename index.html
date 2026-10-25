@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/dmost-logo.jpg" type="image/jpeg">
+<title>How To Sue Your Neighbor — Legal Public-Information Box &amp; Pre-Suit Command Desk</title>
+<style>
+  :root {
+    --paper: #f3ecdf;
+    --sheet: #fffaf3;
+    --ink: #1b1612;
+    --muted: #5f554a;
+    --line: #dccab0;
+    --oxblood: #7c2431;
+    --oxblood-dark: #591721;
+    --oxblood-ink: #fff8f4;
+    --oxblood-soft: #f6e6e4;
+    --chip: #efe4d2;
+    --gold: #b8860b;
+    --green: #1f6b3b;
+    --green-soft: #e6f4ea;
+    --blue-dms: #0a1728;
+    --blue-accent: #2f9dff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    line-height: 1.55;
+  }
+  .dms-topbar {
+    background: linear-gradient(90deg, #060d1a 0%, #0f2440 100%);
+    color: #eef4fb;
+    padding: 0.55rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    border-bottom: 2px solid var(--blue-accent);
+    font-size: 0.82rem;
+  }
+  .dms-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+  .dms-brand img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1.5px solid var(--blue-accent);
+    object-fit: cover;
+  }
+  .dms-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .dms-links a {
+    color: #eef4fb;
+    text-decoration: none;
+    background: rgba(47, 157, 255, 0.16);
+    border: 1px solid rgba(111, 195, 255, 0.35);
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+  .upl-bar {
+    background: var(--oxblood);
+    color: var(--oxblood-ink);
+    padding: 0.55rem 1.2rem;
+    font-size: 0.84rem;
+    font-weight: 600;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    box-shadow: 0 4px 14px rgba(27, 22, 18, 0.18);
+  }
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 1.2rem 1rem 4rem;
+  }
+  header.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--line);
+    margin-bottom: 1.2rem;
+  }
+  .site-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--ink);
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .badge-pill {
+    background: var(--oxblood-soft);
+    color: var(--oxblood);
+    border: 1px solid var(--oxblood);
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .cart-btn {
+    background: var(--sheet);
+    color: var(--ink);
+    border: 2px solid var(--ink);
+    border-radius: 12px;
+    padding: 0.45rem 0.9rem;
+    font-weight: 800;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .notice-box {
+    background: var(--oxblood-soft);
+    border: 1px solid #d5b2b6;
+    border-left: 5px solid var(--oxblood);
+    border-radius: 14px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .notice-box h2 {
+    margin: 0 0 0.35rem;
+    font-family: Georgia, serif;
+    font-size: 1.12rem;
+    color: var(--oxblood);
+  }
+  .notice-box p { margin: 0.25rem 0; font-size: 0.88rem; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 1.5rem;
+    align-items: start;
+    margin-bottom: 2rem;
+  }
+  .hero-kicker {
+    color: var(--oxblood);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.82rem;
+  }
+  .hero-h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.3rem, 5vw, 3.7rem);
+    line-height: 1.04;
+    margin: 0.3rem 0 0.75rem;
+  }
+  .hero-h1 span {
+    display: block;
+    font-style: italic;
+    color: var(--oxblood);
+  }
+  .hero-lead {
+    font-size: 1.08rem;
+    max-width: 640px;
+    margin: 0 0 1rem;
+  }
+  .tier-ribbon {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+    margin-top: 1.1rem;
+  }
+  .tier-card {
+    background: var(--sheet);
+    border: 2px solid var(--line);
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 8px 22px -12px rgba(27, 22, 18, 0.22);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .tier-card.featured {
+    border-color: var(--oxblood);
+    background: linear-gradient(180deg, #fffaf3 0%, #f9ecea 100%);
+  }
+  .tier-tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--oxblood);
+  }
+  .tier-price {
+    font-family: Georgia, serif;
+    font-size: 1.85rem;
+    font-weight: 900;
+    margin: 0.2rem 0;
+    color: var(--ink);
+  }
+  .tier-price small {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .tier-card ul {
+    margin: 0.4rem 0 0.8rem;
+    padding-left: 1.1rem;
+    font-size: 0.85rem;
+  }
+  .tier-card li { margin-bottom: 0.28rem; }
+  .card-sheet {
+    background: var(--sheet);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 1.3rem;
+    box-shadow: 0 10px 26px -14px rgba(27, 22, 18, 0.24);
+    margin-bottom: 1.5rem;
+  }
+  .section-title {
+    font-family: Georgia, serif;
+    font-size: 1.75rem;
+    margin: 0 0 0.35rem;
+    color: var(--ink);
+  }
+  .section-sub {
+    color: var(--muted);
+    margin: 0 0 1rem;
+    font-size: 0.95rem;
+  }
+  .chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0.6rem 0 1rem;
+  }
+  .chip {
+    background: var(--chip);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.42rem 0.85rem;
+    font-size: 0.83rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .chip:hover, .chip.active {
+    background: var(--oxblood);
+    color: var(--oxblood-ink);
+    border-color: var(--oxblood);
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+  .form-full { grid-column: 1 / -1; }
+  label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--ink);
+  }
+  input[type="text"], input[type="email"], input[type="number"], input[type="date"], select, textarea {
+    width: 100%;
+    font: inherit;
+    font-size: 0.96rem;
+    padding: 0.62rem 0.75rem;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--ink);
+  }
+  textarea { resize: vertical; min-height: 96px; }
+  input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--oxblood);
+    border-color: var(--oxblood);
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    font: inherit;
+    font-weight: 800;
+    font-size: 0.94rem;
+    padding: 0.72rem 1.15rem;
+    border-radius: 12px;
+    border: 1px solid var(--oxblood);
+    background: var(--oxblood);
+    color: var(--oxblood-ink);
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn:hover { background: var(--oxblood-dark); }
+  .btn.secondary {
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .btn.green {
+    background: var(--green);
+    border-color: var(--green);
+    color: #fff;
+  }
+  .btn.full { width: 100%; }
+  .letter-preview {
+    background: #fff;
+    border: 2px solid var(--line);
+    border-radius: 14px;
+    padding: 1.5rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    white-space: pre-wrap;
+    color: #111;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
+  }
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.1rem;
+  }
+  .three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .good-box {
+    background: var(--green-soft);
+    border: 1px solid #a8dab5;
+    border-left: 5px solid var(--green);
+    border-radius: 14px;
+    padding: 1rem;
+  }
+  .bad-box {
+    background: var(--oxblood-soft);
+    border: 1px solid #deb4b8;
+    border-left: 5px solid var(--oxblood);
+    border-radius: 14px;
+    padding: 1rem;
+  }
+  .form-link-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 0.9rem;
+    margin-bottom: 0.65rem;
+  }
+  .case-card {
+    background: var(--sheet);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 12, 10, 0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    padding: 1rem;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal-card {
+    background: var(--sheet);
+    border: 2px solid var(--oxblood);
+    border-radius: 18px;
+    max-width: 560px;
+    width: 100%;
+    padding: 1.4rem;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  @media (max-width: 860px) {
+    .hero-grid, .tier-ribbon, .form-grid, .two-col, .three-col {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media print {
+    .no-print, .dms-topbar, .upl-bar { display: none !important; }
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body>
+
+<div class="dms-topbar no-print">
+  <div class="dms-brand">
+    <img src="/dmost-logo.jpg" alt="D Most Services Inc">
+    <span>D MOST SERVICES INC • LDTT DENT PRODUCT STUDIO — HOW TO SUE YOUR NEIGHBOR</span>
+  </div>
+  <div class="dms-links">
+    <a href="/">4-Zone Command Desk</a>
+    <a href="/dent-mobile">Phone &amp; DeX App</a>
+    <a href="/products/sam-capture">SAM.gov Capture Desk</a>
+    <a href="https://github.com/rockmed888-ship-it/how-to-sue-your-neighbor" target="_blank" rel="noreferrer">GitHub Repo</a>
+  </div>
+</div>
+
+<div class="upl-bar">
+  PUBLIC LEGAL INFORMATION BOX — NOT LEGAL ADVICE: We are not a law firm and do not give legal advice. We organize your facts, generate your Pre-Suit Command Letter, and locate free official public court paperwork &amp; filing steps.
+</div>
+
+<div class="container">
+  <header class="site-header no-print">
+    <div>
+      <div class="site-title">How To Sue Your Neighbor™ — Civil Information &amp; Command Letter Box</div>
+      <div style="font-size:0.84rem;color:var(--muted);">For Unpaid Services, Invoices, Bosses/Wages, Contractors, Landlords, Walmart/Stores &amp; Next-Door Disputes</div>
+    </div>
+    <div class="header-actions">
+      <span class="badge-pill" id="unlock-badge">Tier Status: Ready</span>
+      <button type="button" class="cart-btn" id="btn-open-cart">
+        🛒 Cart &amp; Payment Plans (<span id="cart-count">0</span>)
+      </button>
+    </div>
+  </header>
+
+  <div class="notice-box no-print">
+    <h2>Public Legal Information In A Box — 100% One-Time Payments (No Monthly Subscriptions)</h2>
+    <p><strong>“Neighbor” means anyone who wronged you or owes you money:</strong> a client who didn't pay for a service you provided, a boss or company holding your pay, a contractor who vanished with a deposit, a landlord keeping your security deposit, a big-box store like Walmart where you were hurt, or the person living next door.</p>
+    <p><strong>No Legal Advice &amp; No Monthly Subscriptions:</strong> We never give legal advice or lock you into a monthly fee. <strong>One-Time Payment #1 ($19 Once)</strong> examines your Who/What/Why situation sheet and builds + emails your formal Certified-Mail <strong>Command / Demand Letter</strong> so they can pay you without further ado. If they still don't pay, <strong>One-Time Payment #2 ($45 Once)</strong> delivers the <strong>free official public court files</strong>, <strong>where &amp; how long you have to file</strong>, a <strong>Good vs. Bad Suing Process Guide</strong>, and emails the entire filing literature packet to you.</p>
+  </div>
+
+  <!-- HERO & 2 ONE-TIME PAYMENT BOXES (+ FULL BUNDLE) -->
+  <section class="hero-grid no-print">
+    <div>
+      <div class="hero-kicker">Civil Resolution &amp; Public Court Paperwork Box • One-Time Payments Only</div>
+      <h1 class="hero-h1">
+        How to Sue
+        <span>Your Neighbor</span>
+      </h1>
+      <p class="hero-lead">
+        Start with <strong>Payment #1 ($19 once)</strong> for your <strong>Command Letter &amp; Situation Examination</strong>. If they pay, it ends there. If they refuse, unlock <strong>Payment #2 ($45 once)</strong> for your <strong>Official Court Files &amp; Suing Process Guide</strong>.
+      </p>
+
+      <div class="tier-ribbon">
+        <div class="tier-card">
+          <div>
+            <div class="tier-tag">One-Time Payment #1 • Resolution First</div>
+            <h3 style="margin:0.2rem 0;font-family:Georgia,serif;">Command Letter &amp; Situation Examination</h3>
+            <div class="tier-price">$19 <small>one-time payment</small></div>
+            <ul>
+              <li>Full Who / What / When / Where / Why Situation Examination</li>
+              <li>Formal Pre-Suit Command / Demand Letter for unpaid services or money owed</li>
+              <li>Certified-Mail instructions &amp; Instant Email + Print PDF delivery</li>
+              <li><strong>No monthly subscription</strong></li>
+            </ul>
+          </div>
+          <button type="button" class="btn full" onclick="selectTierPlan('payment1_letter_exam', 'One-Time Payment #1: Command Letter & Situation Examination', 19, 'One-Time Payment ($19 Once — No Subscription)')">
+            Buy Payment #1 ($19 Once)
+          </button>
+        </div>
+
+        <div class="tier-card featured">
+          <div>
+            <div class="tier-tag">One-Time Payment #2 • Filing &amp; Process Box</div>
+            <h3 style="margin:0.2rem 0;font-family:Georgia,serif;">Official Court Files &amp; Suing Process Guide</h3>
+            <div class="tier-price">$45 <small>one-time payment</small></div>
+            <ul>
+              <li>Free Official State Court Paperwork &amp; Forms Finder</li>
+              <li>Where to File (Court Track) &amp; How Long You Have to File</li>
+              <li>Step-by-Step Instructions to Use the Paperwork Properly</li>
+              <li>How the Suit Process Goes (Good vs. Bad Overview &amp; Next Steps)</li>
+              <li>Complete Email Literature Packet Delivery</li>
+            </ul>
+          </div>
+          <button type="button" class="btn full" onclick="selectTierPlan('payment2_files_guide', 'One-Time Payment #2: Official Court Files & Suing Process Guide', 45, 'One-Time Payment ($45 Once — No Subscription)')">
+            Buy Payment #2 ($45 Once)
+          </button>
+        </div>
+
+        <div class="tier-card">
+          <div>
+            <div class="tier-tag">Complete Box Bundle • Save $5</div>
+            <h3 style="margin:0.2rem 0;font-family:Georgia,serif;">Both Boxes Together (Letter + Files + Guide)</h3>
+            <div class="tier-price">$59 <small>one-time payment</small></div>
+            <ul>
+              <li><strong>Includes Payment #1 ($19):</strong> Command Letter &amp; Situation Examination</li>
+              <li><strong>Includes Payment #2 ($45):</strong> Official Court Files, Filing Deadlines, Good/Bad Suing Process Guide &amp; Full Email Packet</li>
+              <li><strong>100% One-Time Payment — Never Billed Monthly</strong></li>
+            </ul>
+          </div>
+          <div style="display:grid;gap:0.4rem;">
+            <button type="button" class="btn green full" onclick="selectTierPlan('complete_box_bundle', 'Complete Legal Info Box (Payment #1 Letter & Exam + Payment #2 Court Files & Suing Guide)', 59, 'One-Time Bundle Payment ($59 Once — No Subscription)')">
+              Buy Complete Box ($59 Once)
+            </button>
+            <a href="#lawyer-sponsor" class="btn secondary full" style="font-size:0.82rem;">
+              Referenced Lawyer Directory &darr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK SCENARIO LAUNCHER & PUBLIC CASE PREVIEWS -->
+    <div class="card-sheet" style="margin-bottom:0;">
+      <div class="hero-kicker">1-Click Dispute Presets</div>
+      <h3 style="margin:0.25rem 0 0.5rem;font-family:Georgia,serif;font-size:1.35rem;">Who Owes You Money or Crossed the Line?</h3>
+      <p style="font-size:0.88rem;color:var(--muted);margin-top:0;">Tap any real-world scenario below to pre-fill the Command Letter &amp; Situation Questionnaire:</p>
+      <div class="chip-row" id="scenario-chips">
+        <button type="button" class="chip active" data-preset="service">Unpaid Service / Invoice ($2,400)</button>
+        <button type="button" class="chip" data-preset="boss">Boss / Company Owes Wages</button>
+        <button type="button" class="chip" data-preset="walmart">Walmart / Store Slip &amp; Fall</button>
+        <button type="button" class="chip" data-preset="contractor">Contractor Took Deposit</button>
+        <button type="button" class="chip" data-preset="fence">Neighbor Tore Down Fence</button>
+        <button type="button" class="chip" data-preset="deposit">Landlord Kept Deposit</button>
+      </div>
+
+      <div style="background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:0.9rem;margin-top:0.8rem;">
+        <div style="font-size:0.78rem;font-weight:800;color:var(--oxblood);text-transform:uppercase;">Real Published Appellate Outcomes</div>
+        <div id="hero-case-spotlight" style="font-size:0.88rem;margin-top:0.35rem;">
+          <strong>Gancsos v. Israel (2025)</strong> — Trial court entered <strong>$45,400 judgment</strong> + restoration order after neighbor encroached on boundary strip; Appellate Court affirmed.<br>
+          <strong>Herron v. Daniels (2021)</strong> — Tenant won <strong>double damages</strong> when landlord withheld security deposit.<br>
+          <strong>Alcantar v. Dolgencorp (2024)</strong> — Retail store slip-and-fall summary judgment reversed on appeal.
+        </div>
+        <a href="#public-search-section" style="display:inline-block;margin-top:0.45rem;font-size:0.84rem;font-weight:800;color:var(--oxblood);">
+          &rarr; Search Live Public Cases &amp; State Statutes Below
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 1 & STEP 2: DETAILED QUESTIONNAIRE SHEET -->
+  <section class="card-sheet" id="questionnaire-section">
+    <div class="hero-kicker">Step 1 &amp; Tier 2 Situation Intake Sheet</div>
+    <h2 class="section-title">Tell Us What Actually Happened (Who, What, When, Where &amp; Why)</h2>
+    <p class="section-sub">
+      Fill out the situation sheet below. This single sheet powers both your <strong>Tier 1 Command / Demand Letter</strong> and your <strong>Tier 2 Case Assessment, Free Official Court Paperwork Finder &amp; Email Packet</strong>.
+    </p>
+
+    <form id="sue-form">
+      <div class="form-grid">
+        <div>
+          <label for="f-sender">1. Your Full Legal Name ( or Business Name )</label>
+          <input type="text" id="f-sender" value="Dustin Dent / D Most Services Inc" required>
+        </div>
+        <div>
+          <label for="f-sender-addr">2. Your Mailing Address (Where Payment / Court Mail Goes)</label>
+          <input type="text" id="f-sender-addr" value="100 Operational Way, Huntsville, AL 35801" required>
+        </div>
+        <div>
+          <label for="f-sender-email">3. Your Email Address (Where We Send Your Letter &amp; Filing Packet)</label>
+          <input type="email" id="f-sender-email" value="dustin@dmostservices.com" required>
+        </div>
+        <div>
+          <label for="f-sender-phone">4. Your Phone Number</label>
+          <input type="text" id="f-sender-phone" value="(256) 555-0199">
+        </div>
+
+        <div>
+          <label for="f-def-name">5. Who Are You Suing / Demanding Payment From? ("Neighbor", Boss, Company, Walmart)</label>
+          <input type="text" id="f-def-name" value="Apex Commercial Property Group LLC" required>
+        </div>
+        <div>
+          <label for="f-def-type">6. Who Is on the Other Side? (Entity Type)</label>
+          <select id="f-def-type">
+            <option value="contractor_business">Client / Customer / Business LLC That Owes Money</option>
+            <option value="neighbor_individual">Next-Door Neighbor / Individual Person</option>
+            <option value="employer_boss">Boss / Employer / Company (Unpaid Wages or Contract)</option>
+            <option value="retail_corporation">Walmart / Retail Store / Big Corporation</option>
+            <option value="landlord_property">Landlord / Property Management Company</option>
+          </select>
+        </div>
+        <div>
+          <label for="f-def-addr">7. Their Mailing or Service Address (Store / Office / Home Address)</label>
+          <input type="text" id="f-def-addr" value="450 Parkway Blvd, Huntsville, AL 35801" required>
+        </div>
+        <div>
+          <label for="f-category">8. What Type of Situation Is This?</label>
+          <select id="f-category">
+            <option value="unpaid_service_debt">Unpaid Service Provided, Labor, Invoice, or Money Owed</option>
+            <option value="unpaid_wages_boss">Boss / Employer Owes Wages, Final Paycheck, or Commission</option>
+            <option value="breach_of_contract">Contractor / Vendor Took Deposit &amp; Never Did the Work</option>
+            <option value="property_fence_damage">Neighbor Fence, Tree, Boundary, or Property Damage</option>
+            <option value="premises_slip_fall">Store / Walmart Slip-and-Fall or Premises Injury</option>
+            <option value="security_deposit">Landlord Kept Security Deposit Without Itemization</option>
+            <option value="nuisance">Neighbor Water Flooding, Noise, Animals, or Nuisance</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="f-state">9. State Where It Happened</label>
+          <select id="f-state">
+            <option value="AL" selected>Alabama (AL)</option>
+            <option value="AK">Alaska (AK)</option>
+            <option value="AZ">Arizona (AZ)</option>
+            <option value="AR">Arkansas (AR)</option>
+            <option value="CA">California (CA)</option>
+            <option value="CO">Colorado (CO)</option>
+            <option value="CT">Connecticut (CT)</option>
+            <option value="DE">Delaware (DE)</option>
+            <option value="DC">District of Columbia (DC)</option>
+            <option value="FL">Florida (FL)</option>
+            <option value="GA">Georgia (GA)</option>
+            <option value="HI">Hawaii (HI)</option>
+            <option value="ID">Idaho (ID)</option>
+            <option value="IL">Illinois (IL)</option>
+            <option value="IN">Indiana (IN)</option>
+            <option value="IA">Iowa (IA)</option>
+            <option value="KS">Kansas (KS)</option>
+            <option value="KY">Kentucky (KY)</option>
+            <option value="LA">Louisiana (LA)</option>
+            <option value="ME">Maine (ME)</option>
+            <option value="MD">Maryland (MD)</option>
+            <option value="MA">Massachusetts (MA)</option>
+            <option value="MI">Michigan (MI)</option>
+            <option value="MN">Minnesota (MN)</option>
+            <option value="MS">Mississippi (MS)</option>
+            <option value="MO">Missouri (MO)</option>
+            <option value="MT">Montana (MT)</option>
+            <option value="NE">Nebraska (NE)</option>
+            <option value="NV">Nevada (NV)</option>
+            <option value="NH">New Hampshire (NH)</option>
+            <option value="NJ">New Jersey (NJ)</option>
+            <option value="NM">New Mexico (NM)</option>
+            <option value="NY">New York (NY)</option>
+            <option value="NC">North Carolina (NC)</option>
+            <option value="ND">North Dakota (ND)</option>
+            <option value="OH">Ohio (OH)</option>
+            <option value="OK">Oklahoma (OK)</option>
+            <option value="OR">Oregon (OR)</option>
+            <option value="PA">Pennsylvania (PA)</option>
+            <option value="RI">Rhode Island (RI)</option>
+            <option value="SC">South Carolina (SC)</option>
+            <option value="SD">South Dakota (SD)</option>
+            <option value="TN">Tennessee (TN)</option>
+            <option value="TX">Texas (TX)</option>
+            <option value="UT">Utah (UT)</option>
+            <option value="VT">Vermont (VT)</option>
+            <option value="VA">Virginia (VA)</option>
+            <option value="WA">Washington (WA)</option>
+            <option value="WV">West Virginia (WV)</option>
+            <option value="WI">Wisconsin (WI)</option>
+            <option value="WY">Wyoming (WY)</option>
+          </select>
+        </div>
+        <div>
+          <label for="f-place">10. City or County</label>
+          <input type="text" id="f-place" value="Huntsville / Madison County" required>
+        </div>
+
+        <div>
+          <label for="f-date">11. Date(s) of Service, Agreement, or Incident</label>
+          <input type="text" id="f-date" value="October 1, 2026" required>
+        </div>
+        <div>
+          <label for="f-amount">12. Dollar Amount Owed / Claimed ($)</label>
+          <input type="number" id="f-amount" value="2400" min="1" step="1" required>
+        </div>
+
+        <div class="form-full">
+          <label for="f-story">13. Detailed Description of Event Box (What happened, step by step, in plain words)</label>
+          <textarea id="f-story" required>I provided commercial repair and fabrication services at 450 Parkway Blvd as agreed in writing on October 1, 2026. All work passed inspection and the final invoice (#1042 for $2,400) was delivered on October 5, 2026. Despite multiple reminders, they have refused to pay the balance owed for the completed service.</textarea>
+        </div>
+
+        <div>
+          <label for="f-relief">14. What Do You Want Done / What Do You Want to Sue For?</label>
+          <textarea id="f-relief" style="min-height:76px;">Immediate payment of the $2,400 unpaid service invoice in full, plus court filing fees, service of process costs, and statutory interest if a lawsuit becomes necessary.</textarea>
+        </div>
+        <div>
+          <label for="f-basis">15. How You Calculated the Amount &amp; Proof You Have (Invoices, Photos, Texts)</label>
+          <textarea id="f-basis" style="min-height:76px;">Signed work authorization ($2,400 agreed price), Invoice #1042, completion photographs, and text messages acknowledging the work was completed.</textarea>
+        </div>
+
+        <div>
+          <label for="f-days">16. Days Given to Pay in Command Letter Before Filing Suit</label>
+          <input type="number" id="f-days" value="14" min="5" max="60">
+        </div>
+        <div style="display:flex;align-items:center;padding-top:1.2rem;">
+          <label style="display:flex;align-items:flex-start;gap:0.5rem;font-weight:600;cursor:pointer;">
+            <input type="checkbox" id="f-accept" checked required style="width:20px;height:20px;margin-top:2px;accent-color:var(--oxblood);">
+            <span>I understand this box provides public legal information and self-help document templates, NOT legal advice, and I will verify all forms with the court clerk.</span>
+          </label>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:1.1rem;">
+        <button type="submit" class="btn" id="btn-generate-all">
+          ⚡ Generate Tier 1 Command Letter &amp; Tier 2 Case Assessment Packet
+        </button>
+        <button type="button" class="btn green" id="btn-ask-masterminds">
+          🧠 Have AI Masterminds (Grok + Muse + Gemini) Audit My Packet
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <!-- TIER 1 OUTPUT: FORMAL PRE-SUIT COMMAND / DEMAND LETTER -->
+  <section class="card-sheet" id="tier1-section">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.6rem;margin-bottom:0.8rem;">
+      <div>
+        <div class="hero-kicker">One-Time Payment #1 Deliverable ($19 Once — Command Letter &amp; Situation Examination)</div>
+        <h2 class="section-title" style="margin:0;">Your Formal Pre-Suit Command / Demand Letter</h2>
+      </div>
+      <div class="no-print" style="display:flex;gap:0.45rem;flex-wrap:wrap;">
+        <button type="button" class="btn secondary" onclick="window.print()">🖨️ Print / Save PDF</button>
+        <button type="button" class="btn secondary" id="btn-copy-letter">📋 Copy Letter</button>
+        <button type="button" class="btn green" id="btn-email-letter">✉️ Email Command Letter</button>
+      </div>
+    </div>
+    <div class="letter-preview" id="out-command-letter">Generating your formal Command Letter...</div>
+  </section>
+
+  <!-- TIER 2 OUTPUT: CASE ASSESSMENT, FREE OFFICIAL COURT FORMS, WHERE/HOW LONG TO FILE, GOOD VS BAD PROCESS -->
+  <section class="card-sheet" id="tier2-section">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.6rem;margin-bottom:0.8rem;">
+      <div>
+        <div class="hero-kicker">One-Time Payment #2 Deliverable ($45 Once — Official Court Files &amp; Suing Process Guide)</div>
+        <h2 class="section-title" style="margin:0;">Official Court Files Finder, Filing Deadlines &amp; Suing Process Guide</h2>
+      </div>
+      <span class="badge-pill" id="out-state-badge">Alabama (AL)</span>
+    </div>
+
+    <div class="two-col" style="margin-bottom:1.2rem;">
+      <div class="form-link-card" style="background:var(--oxblood-soft);border-color:var(--oxblood);">
+        <h3 style="margin:0 0 0.35rem;font-family:Georgia,serif;color:var(--oxblood);">Where to File &amp; Court Track</h3>
+        <div id="out-forum-rec" style="font-size:0.93rem;"></div>
+        <div style="margin-top:0.5rem;font-size:0.88rem;"><strong>Venue Rule:</strong> <span id="out-where-file"></span></div>
+      </div>
+      <div class="form-link-card">
+        <h3 style="margin:0 0 0.35rem;font-family:Georgia,serif;color:var(--oxblood);">How Long You Have to File &amp; Claim Name</h3>
+        <div style="font-size:0.9rem;"><strong>Public Claim Classification:</strong> <span id="out-claim-name"></span></div>
+        <div style="margin-top:0.4rem;font-size:0.9rem;"><strong>Statute of Limitations Window:</strong> <span id="out-sol-window"></span></div>
+        <div style="margin-top:0.4rem;font-size:0.86rem;color:var(--muted);"><strong>Evidence Checklist:</strong> <span id="out-evidence"></span></div>
+      </div>
+    </div>
+
+    <h3 style="font-family:Georgia,serif;font-size:1.35rem;margin:1rem 0 0.5rem;">1. Free Official Public Legal Paperwork &amp; Court Portals</h3>
+    <p class="section-sub" style="margin-bottom:0.7rem;">We do not mark up government forms — here are the direct links to the free official public forms and corporate entity lookups you need for your situation:</p>
+    <div id="out-free-forms"></div>
+
+    <h3 style="font-family:Georgia,serif;font-size:1.35rem;margin:1.3rem 0 0.5rem;">2. Step-by-Step Instructions on How to Use the Paperwork Properly</h3>
+    <div id="out-filing-steps"></div>
+
+    <h3 style="font-family:Georgia,serif;font-size:1.35rem;margin:1.3rem 0 0.5rem;">3. Overview: How the Suit Process Generally Goes (Good vs. Bad)</h3>
+    <div class="two-col">
+      <div class="good-box">
+        <h4 style="margin:0 0 0.5rem;font-family:Georgia,serif;color:var(--green);font-size:1.15rem;">✅ How It Generally Goes GOOD (Best-Case Paths)</h4>
+        <ul id="out-good-list" style="margin:0;padding-left:1.2rem;font-size:0.9rem;"></ul>
+      </div>
+      <div class="bad-box">
+        <h4 style="margin:0 0 0.5rem;font-family:Georgia,serif;color:var(--oxblood);font-size:1.15rem;">⚠️ How It Can Go BAD (Common Pitfalls &amp; How to Avoid Them)</h4>
+        <ul id="out-bad-list" style="margin:0;padding-left:1.2rem;font-size:0.9rem;"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL LITERATURE PACKET DELIVERY BOX -->
+  <section class="card-sheet" id="email-packet-section">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.6rem;margin-bottom:0.8rem;">
+      <div>
+        <div class="hero-kicker">Automated Customer Delivery Literature</div>
+        <h2 class="section-title" style="margin:0;">Complete Email Packet Sent to the Customer</h2>
+        <p class="section-sub" style="margin:0.2rem 0 0;">Contains their Command Letter, Assessed Situation Summary, Free Official Court Forms Links, Filing Deadlines, and Step-by-Step Usage Instructions.</p>
+      </div>
+      <div class="no-print" style="display:flex;gap:0.45rem;flex-wrap:wrap;">
+        <button type="button" class="btn green" id="btn-mailto-packet">✉️ Open in Email Client</button>
+        <button type="button" class="btn" id="btn-dex-gmail-packet">📱 Send via DeX Native Gmail</button>
+        <button type="button" class="btn secondary" id="btn-copy-packet">📋 Copy Full Email Literature</button>
+      </div>
+    </div>
+    <div style="margin-bottom:0.5rem;font-size:0.9rem;">
+      <strong>To:</strong> <span id="out-email-to"></span> &nbsp;|&nbsp;
+      <strong>Subject:</strong> <span id="out-email-sub"></span>
+    </div>
+    <div class="letter-preview" id="out-email-body" style="max-height:380px;overflow-y:auto;font-family:Consolas,monospace;font-size:0.85rem;"></div>
+  </section>
+
+  <!-- LIVE PUBLIC FILES & CASE LAW SEARCH TOOL (SHOOTS TO THE LIVE WEB) -->
+  <section class="card-sheet no-print" id="public-search-section">
+    <div class="hero-kicker">Live Public Record &amp; Statute Search Engine</div>
+    <h2 class="section-title">Public Legal Files Search Tool (Shoots to the Live Web)</h2>
+    <p class="section-sub">
+      Search published court opinions via <strong>CourtListener</strong> or shoot directly to live state statutes, official court clerk form indexes, and Secretary of State Registered Agent records.
+    </p>
+    <div style="display:flex;gap:0.6rem;flex-wrap:wrap;margin-bottom:0.9rem;">
+      <input type="text" id="pub-search-q" value="breach of contract unpaid services invoice" placeholder="Search cases, statutes, or companies (e.g., unpaid contractor, premises slip and fall, security deposit)..." style="flex:1;min-width:240px;">
+      <button type="button" class="btn" id="btn-pub-search">🔎 Search Public Cases &amp; Live Web</button>
+    </div>
+
+    <div style="margin-bottom:1rem;">
+      <div style="font-size:0.82rem;font-weight:800;color:var(--oxblood);text-transform:uppercase;margin-bottom:0.4rem;">1-Click Live Web Portals (Opens Official Public Records in New Tab):</div>
+      <div class="chip-row" id="live-web-portals"></div>
+    </div>
+
+    <div class="two-col" id="pub-cases-list"></div>
+  </section>
+
+  <!-- TIER 3: SPONSORED LAWYER REFERENCE DIRECTORY -->
+  <section class="card-sheet no-print" id="lawyer-sponsor">
+    <div class="hero-kicker">Paid Attorney Reference Directory</div>
+    <h2 class="section-title">Referenced Civil &amp; Trial Attorneys Directory</h2>
+    <p class="section-sub">
+      Need a licensed attorney to take over your lawsuit or handle a high-dollar corporate/injury claim? Below are referenced attorneys and public bar directories. <strong>Attorneys:</strong> Pay a listing fee to place your firm as a featured reference in your county and practice area.
+    </p>
+
+    <div class="two-col" id="lawyer-directory-list" style="margin-bottom:1.2rem;"></div>
+
+    <div style="background:var(--paper);border:2px solid var(--oxblood);border-radius:14px;padding:1.1rem;">
+      <h3 style="margin:0 0 0.35rem;font-family:Georgia,serif;color:var(--oxblood);">Lawyers: Reserve Your Referenced Attorney Listing</h3>
+      <p style="font-size:0.88rem;margin:0 0 0.8rem;">Get high-intent civil plaintiffs who already have their facts, timeline, and documents organized.</p>
+      <div class="form-grid">
+        <div>
+          <label for="law-firm">Law Firm / Attorney Name</label>
+          <input type="text" id="law-firm" placeholder="e.g., Smith &amp; Associates Trial Lawyers PLLC">
+        </div>
+        <div>
+          <label for="law-spec">Practice Areas</label>
+          <input type="text" id="law-spec" placeholder="e.g., Unpaid Commercial Contracts, Employment, Premises Liability">
+        </div>
+        <div>
+          <label for="law-jur">State &amp; Counties Covered</label>
+          <input type="text" id="law-jur" placeholder="e.g., Alabama — Madison, Jefferson &amp; Mobile Counties">
+        </div>
+        <div>
+          <label for="law-phone">Intake Phone &amp; Website</label>
+          <input type="text" id="law-phone" placeholder="e.g., (256) 555-0144 | https://examplelaw.com">
+        </div>
+      </div>
+      <button type="button" class="btn green" id="btn-add-lawyer" style="margin-top:0.8rem;">
+        ➕ Add Referenced Attorney Listing
+      </button>
+      <span id="lawyer-msg" style="margin-left:0.75rem;font-size:0.88rem;font-weight:700;color:var(--green);"></span>
+    </div>
+  </section>
+
+  <!-- MASTERMIND COUNCIL AUDIT PANEL -->
+  <section class="card-sheet no-print" id="mastermind-audit-box" style="display:none;">
+    <div class="hero-kicker">LDTT DENT AI Mastermind Council</div>
+    <h2 class="section-title">Live Mastermind Audit (Grok + Muse + Gemini)</h2>
+    <div id="mastermind-audit-out" class="letter-preview" style="font-family:'Segoe UI',sans-serif;font-size:0.9rem;"></div>
+  </section>
+</div>
+
+<!-- CART & ONE-TIME CHECKOUT MODAL -->
+<div class="modal-backdrop" id="cart-modal">
+  <div class="modal-card">
+    <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:0.6rem;">
+      <h3 style="margin:0;font-family:Georgia,serif;font-size:1.4rem;">🛒 One-Time Checkout (No Monthly Subscriptions)</h3>
+      <button type="button" class="btn secondary" onclick="closeCartModal()" style="padding:0.3rem 0.65rem;">✕</button>
+    </div>
+    <div id="cart-items-box" style="margin:1rem 0;"></div>
+    <div style="background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:0.9rem;margin-bottom:1rem;">
+      <label style="font-weight:800;color:var(--oxblood);">Choose Which One-Time Payment Box You Need:</label>
+      <label style="display:flex;align-items:center;gap:0.5rem;font-weight:600;margin-top:0.45rem;cursor:pointer;">
+        <input type="radio" name="pay_mode" value="p1"> <strong>One-Time Payment #1 ($19 Once):</strong> Command / Demand Letter + Situation Examination Only
+      </label>
+      <label style="display:flex;align-items:center;gap:0.5rem;font-weight:600;margin-top:0.4rem;cursor:pointer;">
+        <input type="radio" name="pay_mode" value="p2"> <strong>One-Time Payment #2 ($45 Once):</strong> Official Court Files Finder + Where/How Long to File + Good vs. Bad Suing Process Guide + Email Literature
+      </label>
+      <label style="display:flex;align-items:center;gap:0.5rem;font-weight:600;margin-top:0.4rem;cursor:pointer;">
+        <input type="radio" name="pay_mode" value="bundle" checked> <strong>Complete 2-Box Bundle ($59 Once — Save $5):</strong> Both Payment #1 (Command Letter &amp; Examination) AND Payment #2 (Court Files &amp; Suing Process Guide)
+      </label>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.9rem;">
+      <span style="font-weight:800;">One-Time Payment Total (No Recurring Fees):</span>
+      <span id="cart-total-due" style="font-family:Georgia,serif;font-size:2rem;font-weight:900;color:var(--oxblood);">$59.00</span>
+    </div>
+    <button type="button" class="btn green full" id="btn-complete-checkout">
+      ✅ Complete One-Time Payment &amp; Unlock Packet + Email Delivery
+    </button>
+    <p id="checkout-receipt-msg" style="margin:0.6rem 0 0;font-size:0.86rem;font-weight:700;color:var(--green);text-align:center;"></p>
+  </div>
+</div>
+
+<script>
+const PRESETS = {
+  service: {
+    def_name: "Apex Commercial Property Group LLC",
+    def_type: "contractor_business",
+    def_addr: "450 Parkway Blvd, Huntsville, AL 35801",
+    category: "unpaid_service_debt",
+    state: "AL",
+    place: "Huntsville / Madison County",
+    date: "October 1, 2026",
+    amount: "2400",
+    story: "I provided commercial repair and fabrication services at 450 Parkway Blvd as agreed in writing on October 1, 2026. All work passed inspection and the final invoice (#1042 for $2,400) was delivered on October 5, 2026. Despite multiple reminders, they have refused to pay the balance owed for the completed service.",
+    relief: "Immediate payment of the $2,400 unpaid service invoice in full, plus court filing fees, service of process costs, and statutory interest if a lawsuit becomes necessary.",
+    basis: "Signed work authorization ($2,400 agreed price), Invoice #1042, completion photographs, and text messages acknowledging the work was completed."
+  },
+  boss: {
+    def_name: "Mid-South Logistics & Staffing Inc.",
+    def_type: "employer_boss",
+    def_addr: "800 Industrial Dr, Birmingham, AL 35203",
+    category: "unpaid_wages_boss",
+    state: "AL",
+    place: "Birmingham / Jefferson County",
+    date: "September 15 – October 10, 2026",
+    amount: "3150",
+    story: "I worked 90 regular and overtime hours plus earned an agreed $900 dispatch bonus between September 15 and October 10, 2026. My boss and the company have withheld my final paycheck and bonus totaling $3,150 after my last shift.",
+    relief: "Immediate payment of $3,150 in unpaid wages and earned bonus, plus statutory wage penalties and court costs if filed.",
+    basis: "Signed pay-rate sheet ($25/hr + $900 bonus), timeclock exports showing 90 hours worked, and text messages from supervisor."
+  },
+  walmart: {
+    def_name: "Walmart Inc. (Store #1234 — Registered Agent: CT Corporation System)",
+    def_type: "retail_corporation",
+    def_addr: "2900 Memorial Pkwy SW, Huntsville, AL 35801",
+    category: "premises_slip_fall",
+    state: "TX",
+    place: "Houston / Harris County",
+    date: "September 28, 2026",
+    amount: "4850",
+    story: "While shopping in Aisle 7 on September 28, 2026, I slipped and fell on a large puddle of clear liquid leaking from a cooler. There were no wet floor cones or warning signs posted. I injured my knee and lower back, reported the incident to the store manager on duty, and incurred urgent care, X-ray, and physical therapy bills.",
+    relief: "Reimbursement of $4,850 for documented medical expenses, out-of-pocket treatment costs, and lost work days, plus preservation of store CCTV footage.",
+    basis: "Urgent care invoice ($1,450), orthopedic & imaging bill ($2,200), missed work pay verification ($1,200), and Store Incident Report."
+  },
+  contractor: {
+    def_name: "Premier Kitchen & Bath Remodeling LLC",
+    def_type: "contractor_business",
+    def_addr: "2214 Camelback Rd, Phoenix, AZ 85016",
+    category: "breach_of_contract",
+    state: "AZ",
+    place: "Phoenix / Maricopa County",
+    date: "August 12, 2026",
+    amount: "3500",
+    story: "I paid the contractor a $3,500 deposit on August 12, 2026 to remodel my kitchen and install custom railings, with work scheduled to begin August 25. They never delivered materials, never started the job, and stopped returning phone calls.",
+    relief: "Full refund of the $3,500 deposit paid for work that was never started, plus court filing and service fees.",
+    basis: "Signed estimate receipt showing $3,500 deposit paid via check/Zelle, text messages promising start dates, and photos of untouched site."
+  },
+  fence: {
+    def_name: "Jordan Lee (Next-Door Property Owner)",
+    def_type: "neighbor_individual",
+    def_addr: "16 Oak Street, Birmingham, AL 35205",
+    category: "property_fence_damage",
+    state: "AL",
+    place: "Birmingham / Jefferson County",
+    date: "October 4, 2026",
+    amount: "1850",
+    story: "My neighbor tore down 45 feet of my boundary fence on October 4, 2026 while grading their driveway and hauled the fencing materials away. They have refused to pay to rebuild the fence.",
+    relief: "Payment of $1,850 to rebuild and restore the damaged boundary fence to its prior condition.",
+    basis: "Two written fence contractor replacement estimates ($1,850 lowest written bid), property survey map, and before/after photos."
+  },
+  deposit: {
+    def_name: "Oakridge Residential Properties LLC",
+    def_type: "landlord_property",
+    def_addr: "900 High Street, Columbus, OH 43215",
+    category: "security_deposit",
+    state: "OH",
+    place: "Columbus / Franklin County",
+    date: "August 31, 2026",
+    amount: "1600",
+    story: "I moved out of my apartment on August 31, 2026, left the unit clean and undamaged, turned in the keys, and provided my forwarding address in writing. More than 35 days have passed and the landlord has neither returned my $1,600 security deposit nor provided an itemized deduction list.",
+    relief: "Return of the $1,600 security deposit plus statutory double damages as provided under state security-deposit law.",
+    basis: "Signed lease showing $1,600 deposit paid, move-out walkthrough photos/video, and certified forwarding-address letter."
+  }
+};
+
+let cart = [
+  { id: "complete_box_bundle", title: "Complete Legal Info Box (Payment #1 Letter & Examination + Payment #2 Court Files & Suing Guide)", price: 59, cadence: "One-Time Payment ($59 Once — No Subscription)" }
+];
+let lastAssessment = null;
+
+function updateCartBadge() {
+  document.getElementById("cart-count").textContent = cart.length;
+}
+
+function selectTierPlan(id, title, price, cadence) {
+  cart = [{ id, title, price, cadence }];
+  const radioVal = id === "payment1_letter_exam" ? "p1" : id === "payment2_files_guide" ? "p2" : "bundle";
+  const radio = document.querySelector(`input[name='pay_mode'][value='${radioVal}']`);
+  if (radio) radio.checked = true;
+  updateCartBadge();
+  openCartModal();
+}
+
+function openCartModal() {
+  const box = document.getElementById("cart-items-box");
+  if (!cart.length) {
+    box.innerHTML = "<p>Your cart is empty.</p>";
+  } else {
+    box.innerHTML = cart.map(item =>
+      `<div style="padding:0.65rem;background:var(--paper);border:1px solid var(--line);border-radius:10px;">
+        <div style="font-weight:800;">${item.title}</div>
+        <div style="font-size:0.84rem;color:var(--muted);">Pricing: ${item.cadence}</div>
+      </div>`
+    ).join("");
+  }
+  syncCartTotal();
+  document.getElementById("cart-modal").classList.add("open");
+}
+
+function closeCartModal() {
+  document.getElementById("cart-modal").classList.remove("open");
+}
+
+function syncCartTotal() {
+  const mode = (document.querySelector("input[name='pay_mode']:checked") || {}).value || "bundle";
+  const due = mode === "p1" ? 19 : mode === "p2" ? 45 : 59;
+  document.getElementById("cart-total-due").textContent = "$" + due + ".00";
+}
+
+document.querySelectorAll("input[name='pay_mode']").forEach(r => r.addEventListener("change", syncCartTotal));
+document.getElementById("btn-open-cart").addEventListener("click", openCartModal);
+
+document.getElementById("btn-complete-checkout").addEventListener("click", () => {
+  const mode = (document.querySelector("input[name='pay_mode']:checked") || {}).value || "bundle";
+  const badge = document.getElementById("unlock-badge");
+  const label = mode === "p1" ? "PAYMENT #1 UNLOCKED ($19 ONCE)" : mode === "p2" ? "PAYMENT #2 UNLOCKED ($45 ONCE)" : "BOTH BOXES UNLOCKED ($59 ONCE)";
+  badge.textContent = label;
+  badge.style.background = "var(--green-soft)";
+  badge.style.color = "var(--green)";
+  badge.style.borderColor = "var(--green)";
+  document.getElementById("checkout-receipt-msg").textContent =
+    "One-time payment activated! Your Command Letter, Official Court Files Finder, Suing Process Guide & Email Literature are unlocked below.";
+  setTimeout(() => {
+    closeCartModal();
+    document.getElementById("tier1-section").scrollIntoView({ behavior: "smooth" });
+  }, 900);
+});
+
+document.querySelectorAll("#scenario-chips .chip").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll("#scenario-chips .chip").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    const p = PRESETS[btn.dataset.preset];
+    if (!p) return;
+    document.getElementById("f-def-name").value = p.def_name;
+    document.getElementById("f-def-type").value = p.def_type;
+    document.getElementById("f-def-addr").value = p.def_addr;
+    document.getElementById("f-category").value = p.category;
+    document.getElementById("f-state").value = p.state;
+    document.getElementById("f-place").value = p.place;
+    document.getElementById("f-date").value = p.date;
+    document.getElementById("f-amount").value = p.amount;
+    document.getElementById("f-story").value = p.story;
+    document.getElementById("f-relief").value = p.relief;
+    document.getElementById("f-basis").value = p.basis;
+    runAssessment();
+  });
+});
+
+function gatherFormData() {
+  return {
+    sender_name: document.getElementById("f-sender").value,
+    sender_address: document.getElementById("f-sender-addr").value,
+    sender_email: document.getElementById("f-sender-email").value,
+    sender_phone: document.getElementById("f-sender-phone").value,
+    defendant_name: document.getElementById("f-def-name").value,
+    defendant_type: document.getElementById("f-def-type").value,
+    defendant_address: document.getElementById("f-def-addr").value,
+    category: document.getElementById("f-category").value,
+    state: document.getElementById("f-state").value,
+    place: document.getElementById("f-place").value,
+    incident_date: document.getElementById("f-date").value,
+    demand_amount: document.getElementById("f-amount").value,
+    story: document.getElementById("f-story").value,
+    relief_sought: document.getElementById("f-relief").value,
+    calculation_basis: document.getElementById("f-basis").value,
+    days_to_respond: Number(document.getElementById("f-days").value) || 14
+  };
+}
+
+function fallbackClientAssess(d) {
+  const today = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  const due = new Date(Date.now() + (d.days_to_respond || 14) * 86400000).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  const letter = `${d.sender_name}\n${d.sender_address}\n${d.sender_email} | ${d.sender_phone}\nDate: ${today}\n\nSENT VIA CERTIFIED MAIL (RETURN RECEIPT REQUESTED)\n\nTO:\n${d.defendant_name}\n${d.defendant_address}\n${d.place}, ${d.state}\n\nRE: FORMAL PRE-SUIT COMMAND & DEMAND FOR RESOLUTION — $${d.demand_amount}\n\nDear ${d.defendant_name}:\n\nI am writing to present a formal pre-suit demand for resolution regarding the matter that occurred on ${d.incident_date} in ${d.place}, ${d.state}:\n\n${d.story}\n\nDEMAND & BASIS:\nDemand is hereby made for $${d.demand_amount} (${d.relief_sought}).\nCalculation & Supporting Proof: ${d.calculation_basis}\n\nPlease remit payment or written settlement confirmation by ${due} (${d.days_to_respond} days) to resolve this matter without further ado before a civil action is filed in the appropriate ${d.state} court.\n\nSincerely,\n${d.sender_name}`;
+  return {
+    ok: true,
+    state: d.state,
+    state_name: d.state,
+    place: d.place,
+    category: {
+      title: d.category,
+      claim_name: "Breach of Contract / Civil Property or Monetary Claim",
+      sol_window: "Typically 2 to 6 years depending on state statute (verify with court clerk).",
+      key_evidence: d.calculation_basis
+    },
+    forum_recommendation: `Small Claims / County Civil Track for $${d.demand_amount} in ${d.place}, ${d.state}.`,
+    command_letter: letter,
+    free_forms: [
+      { name: `1. Official ${d.state} Court Forms Portal`, purpose: "Download the free Small Claims Complaint / Statement of Claim form.", url: `https://www.google.com/search?q=${encodeURIComponent(d.state + " official judiciary small claims court forms")}` },
+      { name: `2. ${d.state} Secretary of State Business Entity Search`, purpose: "Find the exact legal entity name & Registered Agent if suing a Boss, LLC, or Walmart.", url: `https://www.google.com/search?q=${encodeURIComponent(d.state + " secretary of state business search")}` }
+    ],
+    filing_steps: [
+      { step: 1, title: "Mail Command Letter via Certified Mail", detail: "Keep the tracking receipt and a copy of your letter." },
+      { step: 2, title: "File Statement of Claim with the County Clerk", detail: "Attach copies of your invoices, receipts, or estimates." }
+    ],
+    process_overview: {
+      where_to_file: `${d.place}, ${d.state} County / Small Claims Court`,
+      how_long_to_file: "2 to 6 years typical statutory window",
+      how_it_goes_good: ["Pre-suit payout within 14 days of Command Letter.", "Default Judgment if defendant fails to answer summons.", "Pre-trial mediation settlement or hearing judgment."],
+      how_it_goes_bad: ["Suing the wrong entity name instead of the Registered Agent.", "Improper service of process.", "Unitemized damage calculation."]
+    },
+    email_packet: {
+      to: d.sender_email,
+      subject: `Your 'How To Sue Your Neighbor' Command Letter & ${d.state} Filing Packet`,
+      body: letter
+    }
+  };
+}
+
+async function runAssessment() {
+  const payload = gatherFormData();
+  let data = null;
+  try {
+    const res = await fetch("/api/sue-neighbor/assess", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+    if (res.ok) data = await res.json();
+  } catch (e) {}
+  if (!data || !data.ok) {
+    data = fallbackClientAssess(payload);
+  }
+  lastAssessment = data;
+  renderAssessment(data);
+}
+
+function renderAssessment(data) {
+  document.getElementById("out-command-letter").textContent = data.command_letter || "";
+  document.getElementById("out-state-badge").textContent = `${data.place || ""} • ${data.state_name} (${data.state})`;
+  document.getElementById("out-forum-rec").textContent = data.forum_recommendation || "";
+  document.getElementById("out-where-file").textContent = (data.process_overview || {}).where_to_file || "";
+  document.getElementById("out-claim-name").textContent = (data.category || {}).claim_name || "";
+  document.getElementById("out-sol-window").textContent = (data.process_overview || {}).how_long_to_file || "";
+  document.getElementById("out-evidence").textContent = (data.category || {}).key_evidence || "";
+
+  const formsBox = document.getElementById("out-free-forms");
+  formsBox.innerHTML = (data.free_forms || []).map(f =>
+    `<div class="form-link-card" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.6rem;">
+      <div style="max-width:740px;">
+        <div style="font-weight:800;color:var(--ink);">${f.name}</div>
+        <div style="font-size:0.86rem;color:var(--muted);">${f.purpose}</div>
+      </div>
+      <a class="btn secondary" href="${f.url}" target="_blank" rel="noreferrer" style="font-size:0.84rem;padding:0.5rem 0.85rem;">
+        Open Official Public Source &nearr;
+      </a>
+    </div>`
+  ).join("");
+
+  const stepsBox = document.getElementById("out-filing-steps");
+  stepsBox.innerHTML = (data.filing_steps || []).map(s =>
+    `<div class="form-link-card">
+      <div style="font-weight:800;color:var(--oxblood);">Step ${s.step}: ${s.title}</div>
+      <div style="font-size:0.9rem;margin-top:0.2rem;">${s.detail}</div>
+    </div>`
+  ).join("");
+
+  const goodList = document.getElementById("out-good-list");
+  goodList.innerHTML = ((data.process_overview || {}).how_it_goes_good || []).map(g => `<li style="margin-bottom:0.45rem;">${g}</li>`).join("");
+
+  const badList = document.getElementById("out-bad-list");
+  badList.innerHTML = ((data.process_overview || {}).how_it_goes_bad || []).map(b => `<li style="margin-bottom:0.45rem;">${b}</li>`).join("");
+
+  const ep = data.email_packet || {};
+  document.getElementById("out-email-to").textContent = ep.to || "";
+  document.getElementById("out-email-sub").textContent = ep.subject || "";
+  document.getElementById("out-email-body").textContent = ep.body || "";
+}
+
+document.getElementById("sue-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  runAssessment();
+  document.getElementById("tier1-section").scrollIntoView({ behavior: "smooth" });
+});
+
+document.getElementById("btn-copy-letter").addEventListener("click", async () => {
+  const txt = document.getElementById("out-command-letter").textContent;
+  await navigator.clipboard.writeText(txt).catch(() => {});
+  document.getElementById("btn-copy-letter").textContent = "✅ Copied!";
+  setTimeout(() => { document.getElementById("btn-copy-letter").textContent = "📋 Copy Letter"; }, 1800);
+});
+
+document.getElementById("btn-copy-packet").addEventListener("click", async () => {
+  const txt = document.getElementById("out-email-body").textContent;
+  await navigator.clipboard.writeText(txt).catch(() => {});
+  document.getElementById("btn-copy-packet").textContent = "✅ Full Packet Copied!";
+  setTimeout(() => { document.getElementById("btn-copy-packet").textContent = "📋 Copy Full Email Literature"; }, 1800);
+});
+
+function triggerMailto(subject, body) {
+  const to = document.getElementById("f-sender-email").value || "";
+  const url = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body.slice(0, 1900))}`;
+  window.location.href = url;
+}
+
+document.getElementById("btn-email-letter").addEventListener("click", () => {
+  const letter = document.getElementById("out-command-letter").textContent;
+  triggerMailto("Your Pre-Suit Command / Demand Letter — How To Sue Your Neighbor", letter);
+});
+
+document.getElementById("btn-mailto-packet").addEventListener("click", () => {
+  const ep = (lastAssessment && lastAssessment.email_packet) || {};
+  triggerMailto(ep.subject || "Your Legal Info Box Packet", ep.body || "");
+});
+
+document.getElementById("btn-dex-gmail-packet").addEventListener("click", async () => {
+  await fetch("/api/dex/app", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ app_name: "gmail" })
+  }).catch(() => {});
+  const ep = (lastAssessment && lastAssessment.email_packet) || {};
+  triggerMailto(ep.subject || "Your Legal Info Box Packet", ep.body || "");
+});
+
+async function runPublicSearch() {
+  const q = document.getElementById("pub-search-q").value.trim() || "breach of contract unpaid services";
+  const st = document.getElementById("f-state").value || "AL";
+  let data = null;
+  try {
+    const res = await fetch(`/api/sue-neighbor/search?q=${encodeURIComponent(q)}&state=${encodeURIComponent(st)}`);
+    if (res.ok) data = await res.json();
+  } catch (e) {}
+
+  if (!data || !data.ok) {
+    data = {
+      live_web_portals: [
+        { label: `CourtListener Opinions (${st})`, url: `https://www.courtlistener.com/?type=o&q=${encodeURIComponent(st + " " + q)}` },
+        { label: `Google Scholar Case Law (${st})`, url: `https://scholar.google.com/scholar?hl=en&as_sdt=6&q=${encodeURIComponent(st + " " + q)}` },
+        { label: "Cornell LII Legal Encyclopedia", url: `https://www.law.cornell.edu/search/site/${encodeURIComponent(q)}` }
+      ],
+      cases: []
+    };
+  }
+
+  const portals = document.getElementById("live-web-portals");
+  portals.innerHTML = (data.live_web_portals || []).map(p =>
+    `<a class="chip" href="${p.url}" target="_blank" rel="noreferrer" style="text-decoration:none;">🌐 ${p.label} &nearr;</a>`
+  ).join("");
+
+  const casesBox = document.getElementById("pub-cases-list");
+  casesBox.innerHTML = (data.cases || []).map(c =>
+    `<div class="case-card">
+      <div>
+        <div style="font-size:0.76rem;font-weight:800;color:var(--oxblood);text-transform:uppercase;">${c.court} • ${c.year || "Published"}</div>
+        <h4 style="margin:0.2rem 0;font-family:Georgia,serif;font-size:1.15rem;">${c.caption}</h4>
+        <p style="font-size:0.88rem;color:var(--ink);margin:0.35rem 0 0.7rem;">${c.summary}</p>
+      </div>
+      <a class="btn secondary" href="${c.url}" target="_blank" rel="noreferrer" style="font-size:0.83rem;padding:0.45rem 0.8rem;">
+        Open Live Public Record on Web &nearr;
+      </a>
+    </div>`
+  ).join("");
+}
+
+document.getElementById("btn-pub-search").addEventListener("click", runPublicSearch);
+
+async function loadLawyers() {
+  try {
+    const res = await fetch("/api/sue-neighbor/lawyers");
+    const data = await res.json();
+    renderLawyers(data.lawyers || []);
+  } catch (e) {}
+}
+
+function renderLawyers(list) {
+  const box = document.getElementById("lawyer-directory-list");
+  box.innerHTML = list.map(l =>
+    `<div class="case-card">
+      <div>
+        <span class="badge-pill" style="font-size:0.68rem;">${l.badge || "REFERENCED COUNSEL"}</span>
+        <h4 style="margin:0.4rem 0 0.2rem;font-family:Georgia,serif;font-size:1.15rem;">${l.firm}</h4>
+        <div style="font-size:0.85rem;font-weight:700;color:var(--oxblood);">${l.specialty}</div>
+        <div style="font-size:0.84rem;color:var(--muted);margin-top:0.2rem;">Jurisdiction: ${l.jurisdiction}</div>
+        <div style="font-size:0.86rem;margin-top:0.25rem;"><strong>Contact:</strong> ${l.phone}</div>
+      </div>
+      <a class="btn secondary" href="${l.url || '#lawyer-sponsor'}" target="_blank" rel="noreferrer" style="margin-top:0.65rem;font-size:0.82rem;padding:0.45rem 0.8rem;">
+        View Attorney Reference &nearr;
+      </a>
+    </div>`
+  ).join("");
+}
+
+document.getElementById("btn-add-lawyer").addEventListener("click", async () => {
+  const firm = document.getElementById("law-firm").value.trim();
+  if (!firm) return;
+  const specialty = document.getElementById("law-spec").value.trim();
+  const jurisdiction = document.getElementById("law-jur").value.trim();
+  const phone = document.getElementById("law-phone").value.trim();
+  const res = await fetch("/api/sue-neighbor/lawyers", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ firm, specialty, jurisdiction, phone, url: "https://www.dmostservices.com" })
+  });
+  const data = await res.json();
+  if (data.ok) {
+    renderLawyers(data.directory || []);
+    document.getElementById("lawyer-msg").textContent = "Added to Referenced Attorney Directory!";
+    document.getElementById("law-firm").value = "";
+  }
+});
+
+document.getElementById("btn-ask-masterminds").addEventListener("click", async () => {
+  const d = gatherFormData();
+  const box = document.getElementById("mastermind-audit-box");
+  const out = document.getElementById("mastermind-audit-out");
+  box.style.display = "block";
+  out.textContent = "Consulting AI #1 Grok, AI #2 Muse & AI #3 Gemini on your Command Letter and Court Packet...";
+  box.scrollIntoView({ behavior: "smooth" });
+  try {
+    const prompt = `Audit this 'How To Sue Your Neighbor' Public Legal Info Box packet (NOT legal advice): Claimant ${d.sender_name} vs ${d.defendant_name} (${d.defendant_type}) in ${d.place}, ${d.state} for $${d.demand_amount} (${d.category}). Story: ${d.story}. Confirm public forms checklist and profit/conversion readiness.`;
+    const res = await fetch("/api/orchestrate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: prompt, rounds: 1, auto_extract_plans: false, auto_advance: false })
+    });
+    const data = await res.json();
+    const t = data.turn || {};
+    out.textContent =
+      `[AI #1 GROK — Code & Synthesis]:\n${t.grok_text || ""}\n\n` +
+      `[AI #2 MUSE — UI & Mobile/DeX Flow]:\n${t.muse_text || ""}\n\n` +
+      `[AI #3 GEMINI — Strategy & UPL Compliance]:\n${t.gemini_text || ""}`;
+  } catch (e) {
+    out.textContent = "Mastermind Council ready.";
+  }
+});
+
+runAssessment();
+runPublicSearch();
+loadLawyers();
+</script>
+</body>
+</html>

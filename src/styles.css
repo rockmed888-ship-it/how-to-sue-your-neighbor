@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+
+  --color-paper: #f3ecdf;
+  --color-sheet: #fffaf3;
+  --color-ink: #1b1612;
+  --color-muted: #6d6256;
+  --color-line: #e0d0b8;
+  --color-oxblood: #7c2431;
+  --color-oxblood-ink: #fff8f4;
+  --color-oxblood-soft: #f6e6e4;
+  --color-chip: #efe4d2;
+
+  --radius-card: 1.25rem;
+
+  --shadow-border:
+    0px 0px 0px 1px rgba(28, 22, 18, 0.08),
+    0px 1px 2px -1px rgba(28, 22, 18, 0.06),
+    0px 12px 28px -16px rgba(28, 22, 18, 0.28);
+  --shadow-border-hover:
+    0px 0px 0px 1px rgba(28, 22, 18, 0.12),
+    0px 1px 2px -1px rgba(28, 22, 18, 0.08),
+    0px 16px 32px -16px rgba(28, 22, 18, 0.32);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: #f0d0d2;
+    color: var(--color-ink);
+  }
+}
+
+@utility shadow-border {
+  box-shadow: var(--shadow-border);
+}
+
+@utility shadow-border-hover {
+  box-shadow: var(--shadow-border-hover);
+}
+
+@utility paper-rule {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 1.75rem,
+    var(--color-line) 1.75rem,
+    var(--color-line) calc(1.75rem + 1px)
+  );
+  background-position: 0 0.35rem;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
